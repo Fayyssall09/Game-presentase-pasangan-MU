@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎯 Game Presentase Pasangan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe0e9, #fff1f7);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+    }
+
+    .main-container {
+      padding: 80px 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #cc0066;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 0 #fff;
+      animation: bounce 1.5s infinite alternate;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    .menu-button {
+      display: block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(to right, #ff4d88, #ff66a3);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      width: 260px;
+    }
+
+    .menu-button:hover {
+      background: linear-gradient(to right, #e6005c, #ff3385);
+      transform: scale(1.06);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .section {
+      display: none;
+      margin-top: 30px;
+      padding: 25px;
+      background-color: #ffffffdd;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .decor-heart {
+      position: absolute;
+      font-size: 40px;
+      opacity: 0.2;
+      animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .decor-heart:nth-child(1) {
+      top: 20px;
+      left: 20px;
+    }
+    .decor-heart:nth-child(2) {
+      top: 60px;
+      right: 30px;
+      animation-delay: 1s;
+    }
+    .decor-heart:nth-child(3) {
+      bottom: 40px;
+      left: 50px;
+      animation-delay: 2s;
+    }
+    .decor-heart:nth-child(4) {
+      bottom: 70px;
+      right: 40px;
+      animation-delay: 3s;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .main-container {
+        padding: 40px 10px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .menu-button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+      }
+      .section {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dekorasi emoji cinta -->
+  <div class="decor-heart">💖</div>
+  <div class="decor-heart">💘</div>
+  <div class="decor-heart">💕</div>
+  <div class="decor-heart">💞</div>
+
+  <div class="main-container">
+    <h1>💘 Selamat Datang di Game Presentase Pasangan! 💘</h1>
+
+    <button class="menu-button" onclick="location.href='play.html'">🎮 Mainkan Game</button>
+    <button class="menu-button" onclick="toggleSection('cara')">📘 Cara Main</button>
+    <button class="menu-button" onclick="toggleSection('perhatian')">⚠️ Peringatan</button>
+
+    <div id="cara" class="section">
+      <h2>📘 Cara Main</h2>
+      <p>Masukkan nama kamu dan gebetanmu, lalu klik "Mainkan Game" untuk mengetahui seberapa cocok kalian!</p>
+    </div>
+
+    <div id="perhatian" class="section">
+      <h2>⚠️ Peringatan</h2>
+      <p>Game ini hanya untuk hiburan. Jangan dianggap serius ya! 😅</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.style.display = (section.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
